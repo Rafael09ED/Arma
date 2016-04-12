@@ -17,5 +17,7 @@ Dependencies:
 	- ACE3
 
 Notes:
-	There are currently no exception system to prevent some unit loadouts from being changed
+	There is currently no exception system to prevent unit loadouts from being changed
 	The script is untested for JIP
+	
+This script is provided as is, without warranty of any kind. The author is not responsible for any direct, indirect, incidental or consequential damage of any kind, without limitation.
