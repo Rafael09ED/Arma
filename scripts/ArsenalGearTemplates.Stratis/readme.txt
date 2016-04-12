@@ -11,7 +11,7 @@ Installation:
 3. Sync the game logic to each unit you want to use as a template loadout
 4. Set the loadout of each unit synced using the arsenal
 
-Units of the same type as the template units will be created with the same loadout
+Units of the same type as the template units will be created with the corresponding loadout
 
 Dependencies: 
 	- ACE3
