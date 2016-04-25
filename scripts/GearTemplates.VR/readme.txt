@@ -1,6 +1,6 @@
 # Arma 3 Arsenal Gear Templates
 @author: 	Rafael09ED
-@version:	0.1
+@version:	1.0
 
 Installation:
 1. Copy the folder "f" to the mission directory
