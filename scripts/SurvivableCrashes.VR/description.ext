@@ -1,0 +1,11 @@
+enableDebugConsole = 1;
+
+class CfgSounds {
+	class AutorotationWarn
+	{
+		name = "AutorotationWarn";
+		sound[]={"sound\crash\ACE_AutorotationWarning.ogg",4,1};
+		titles[]={};
+	};
+	
+};
