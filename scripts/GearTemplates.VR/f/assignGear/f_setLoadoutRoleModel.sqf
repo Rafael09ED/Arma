@@ -10,7 +10,7 @@ _unitTypeLoadouts = [];
 		_typeLoadout = [[_unitType, _loadout]];
 		_unitTypeLoadouts append _typeLoadout;
 		if(isMultiplayer) then {
-			deleteVehicle _x;
+			//deleteVehicle _x;
 		}
 	};
 } forEach _roleModelUnits;
