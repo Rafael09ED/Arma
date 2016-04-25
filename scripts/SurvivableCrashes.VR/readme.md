@@ -22,6 +22,5 @@
 
 ### Video:
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=V9oBHfImjYk
-" target="_blank"><img src="http://img.youtube.com/vi/V9oBHfImjYk/0.jpg" 
-alt="Survivable Crashes" width="240" height="180" border="10" /></a>
+https://www.youtube.com/watch?v=V9oBHfImjYk
+
