@@ -4,6 +4,8 @@
 
 **Version:**	1.0
 
+Allows the creation of template soldiers who have their loadout applied to all other units of the same type.
+
 ### Installation:
 
 1. Copy the folder "f" to the mission directory
