@@ -4,6 +4,8 @@
 
 **Version:** 1.0
 
+Allows the crew of a vehicle to survive it's destruction and escape harmed. Damage is added through ACE, making it a dependency.
+
 ### Installation:
 
 1. Copy the folder "f" and the folder "sounds" to the mission directory
