@@ -2,6 +2,7 @@
 
 This is a collection of scripts written by Rafael09ED.
 
+**Downloads:** [Releases](https://github.com/Rafael09ED/Arma/releases)
 
 ### Scripts:
 
