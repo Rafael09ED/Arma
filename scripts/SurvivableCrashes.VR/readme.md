@@ -2,25 +2,32 @@
 
 **Author:** Rafael09ED
 
-**Version:** 1.0
+**Version:** 1.1 - dev
 
-Allows the crew of a vehicle to survive it's destruction and escape harmed. Damage is added through ACE, making it a dependency.
+Allows the crew of a vehicle to survive it's destruction and escape harmed. The script was designed for ACE 3, but is Vanilla compatible.
 
 ### Installation:
 
 1. Copy the folder "f" and the folder "sounds" to the mission directory
 2. Merge the description.ext file to the one in your mission directory
-3. Put the following code in the init of each vehicle you want it applied to:
+3. Put the following line of code into your init.sqf file: 
+`sqf
+	[player] execVM "f\crash\fn_handleUnitDamage.sqf";
+`
+4. Put the following code in the init of each vehicle you want it applied to:
+`sqf
+    0 = [this] execVM "f\crash\fn_survivableCrashVehicle.sqf";
+`
+### Change Log: 
 
-```sqf
-    0 = [this] execVM "f\crash\fn_handleDamage_NoExplode.sqf";
-```
+#### 1.1 - dev
+- No longer dependent on ACE 3
+- New Visual Effects
+- Some tweaking of variables
+- Some refactoring
 
-
-### Dependencies: 
-
-- ACE3
-
+#### 1.0
+- Initial Release
 
 ### Video:
 
