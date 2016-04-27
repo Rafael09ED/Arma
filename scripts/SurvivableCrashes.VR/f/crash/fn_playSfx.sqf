@@ -2,7 +2,12 @@ if (!hasInterface) exitWith{};
 _targ = _this select 0;
 _soundLoop = _targ spawn { 
 	for "_i" from 1 to 60 do { 
-		_this say3D ["AutorotationWarn", 3, 1]; 
+	_dist = _this distance player;
+		if (_dist < 1) then {
+			_this say3D ["AutorotationWarn", 4, 1]; 
+		} else {
+			_this say3D ["AutorotationWarn", (4 / _dist) ^ 2, 1];
+		};
 		sleep 1.105;
 	};
 };

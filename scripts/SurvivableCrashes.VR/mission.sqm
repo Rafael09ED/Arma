@@ -8,14 +8,14 @@ class EditorData
 	toggles=137;
 	class ItemIDProvider
 	{
-		nextID=62;
+		nextID=65;
 	};
 	class Camera
 	{
-		pos[]={4915.5151,37.582245,5715.0449};
-		dir[]={0.74148828,-0.67031413,0.030600224};
-		up[]={0.66974926,0.74207735,0.027639311};
-		aside[]={0.041235063,-2.6416092e-007,-0.99917459};
+		pos[]={4933.7627,12.235874,5699.4756};
+		dir[]={0.33684391,-0.50416869,0.79534829};
+		up[]={0.19664314,0.86359257,0.46430764};
+		aside[]={0.9209069,1.5774276e-007,-0.39002138};
 	};
 };
 binarizationWanted=0;
@@ -24,7 +24,6 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Characters_F_BLUFOR",
 	"a3_characters_f",
-	"ace_medical",
 	"A3_Characters_F_OPFOR",
 	"A3_Soft_F_MRAP_01",
 	"A3_Air_F_Heli_Light_01"
@@ -55,7 +54,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=6;
 		class Item0
 		{
 			dataType="Logic";
@@ -178,8 +177,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4947.0254,5.0015612,5717.5439};
-						angles[]={0,4.6958199,0};
+						position[]={4947.0249,5.0014391,5717.5439};
+						angles[]={0,4.6958256,0};
 					};
 					side="West";
 					flags=6;
@@ -189,14 +188,36 @@ class Mission
 					};
 					id=56;
 					type="B_Soldier_F";
-					atlOffset=0.00012207031;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4947.0845,5.0015612,5713.1489};
+						position[]={4946.9214,5.0013666,5713.0156};
 						angles[]={0,4.6691256,0};
 					};
 					side="West";
@@ -207,56 +228,13 @@ class Mission
 					};
 					id=57;
 					type="B_support_AMort_F";
-					atlOffset=0.00012207031;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isSurrendered";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ace_isHandcuffed";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=2;
-					};
+					atlOffset=-7.2479248e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=1;
-			atlOffset=0.00012207031;
 		};
 		class Item2
 		{
@@ -332,287 +310,6 @@ class Mission
 		};
 		class Item3
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={4967.396,5.0001221,5714.9995};
-			};
-			id=12;
-			type="ACE_moduleMedicalSettings";
-			atlOffset=0.00012207031;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ACE_moduleMedicalSettings_litterCleanUpDelay";
-					expression="_this setVariable ['litterCleanUpDelay',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1800;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ACE_moduleMedicalSettings_enableScreams";
-					expression="_this setVariable ['enableScreams',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ACE_moduleMedicalSettings_preventInstaDeath";
-					expression="_this setVariable ['preventInstaDeath',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ACE_moduleMedicalSettings_bleedingCoefficient";
-					expression="_this setVariable ['bleedingCoefficient',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ACE_moduleMedicalSettings_increaseTrainingInLocations";
-					expression="_this setVariable ['increaseTrainingInLocations',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ACE_moduleMedicalSettings_enableUnconsciousnessAI";
-					expression="_this setVariable ['enableUnconsciousnessAI',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=2;
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="ACE_moduleMedicalSettings_remoteControlledAI";
-					expression="_this setVariable ['remoteControlledAI',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="ACE_moduleMedicalSettings_painCoefficient";
-					expression="_this setVariable ['painCoefficient',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="ACE_moduleMedicalSettings_AIDamageThreshold";
-					expression="_this setVariable ['AIDamageThreshold',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="ACE_moduleMedicalSettings_playerDamageThreshold";
-					expression="_this setVariable ['playerDamageThreshold',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute10
-				{
-					property="ACE_moduleMedicalSettings_level";
-					expression="_this setVariable ['level',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute11
-				{
-					property="ACE_moduleMedicalSettings_allowLitterCreation";
-					expression="_this setVariable ['allowLitterCreation',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute12
-				{
-					property="ACE_moduleMedicalSettings_keepLocalSettingsSynced";
-					expression="_this setVariable ['keepLocalSettingsSynced',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute13
-				{
-					property="ACE_moduleMedicalSettings_medicSetting";
-					expression="_this setVariable ['medicSetting',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				nAttributes=14;
-			};
-		};
-		class Item4
-		{
 			dataType="Group";
 			side="East";
 			class Entities
@@ -623,189 +320,87 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4938.5332,5.0015612,5715.1084};
-						angles[]={0,6.2754102,0};
+						position[]={4938.5332,5.0014391,5715.1089};
+						angles[]={0,4.6905723,0};
 					};
 					side="East";
 					flags=7;
 					class Attributes
 					{
-						presenceCondition="isMultiplayer";
+						init="this disableAI ""ANIM"";";
+						presenceCondition="";
 						isPlayable=1;
 					};
 					id=40;
 					type="O_Soldier_AA_F";
-					atlOffset=0.00012207031;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isSurrendered";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ace_isHandcuffed";
-							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=2;
-					};
 				};
 			};
 			class Attributes
 			{
 			};
 			id=13;
-			atlOffset=0.00012207031;
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4942.75,7.2059455,5703.1206};
+				angles[]={0,4.7192483,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="0=[this] execVM ""f\crash\fn_survivableCrashVehicle.sqf"";";
+				name="demoCar";
+			};
+			id=55;
+			type="B_MRAP_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""arifle_MXC_F""],[2]],[[""SmokeShell"",""SmokeShellBlue"",""30Rnd_65x39_caseless_mag""],[2,2,4]],[[""FirstAidKit"",""ToolKit"",""ItemGPS""],[2,1,1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item5
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4942.7495,7.2060676,5703.1201};
-				angles[]={0,4.7192497,0};
+				position[]={4942.2148,6.4002423,5726.9971};
+				angles[]={0,4.7136807,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="0=[this] execVM ""f\crash\fn_handleDamage_NoExplode.sqf"";";
-				name="demoCar";
-			};
-			id=55;
-			type="B_MRAP_01_F";
-			atlOffset=0.00012207031;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_isHandcuffed";
-					expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""arifle_MXC_F"",""FirstAidKit""],[2,2]],[[""SmokeShell"",""SmokeShellBlue"",""30Rnd_65x39_caseless_mag""],[2,2,4]],[[""ToolKit"",""ItemGPS""],[1,1]],[[],[]]],false]";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_isSurrendered";
-					expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item6
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4942.2148,6.4003644,5726.9971};
-				angles[]={0,4.7136765,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="0=[this] execVM ""f\crash\fn_handleDamage_NoExplode.sqf"";";
+				init="0=[this] execVM ""f\crash\fn_survivableCrashVehicle.sqf"";";
 				name="demoHeli";
 			};
 			id=61;
 			type="B_Heli_Light_01_F";
-			atlOffset=0.00012207031;
 			class CustomAttributes
 			{
 				class Attribute0
-				{
-					property="ace_isHandcuffed";
-					expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
 				{
 					property="ammoBox";
 					expression="[_this,_value] call bis_fnc_initAmmoBox;";
@@ -820,30 +415,11 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""arifle_MXC_F"",""FirstAidKit""],[2,2]],[[""SmokeShell"",""SmokeShellBlue"",""30Rnd_65x39_caseless_mag""],[2,2,4]],[[""ToolKit"",""ItemGPS""],[1,1]],[[],[]]],false]";
+							value="[[[[""arifle_MXC_F""],[2]],[[""SmokeShell"",""SmokeShellBlue"",""30Rnd_65x39_caseless_mag""],[2,2,4]],[[""FirstAidKit"",""ToolKit"",""ItemGPS""],[2,1,1]],[[],[]]],false]";
 						};
 					};
 				};
-				class Attribute2
-				{
-					property="ace_isSurrendered";
-					expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=3;
+				nAttributes=1;
 			};
 		};
 	};
