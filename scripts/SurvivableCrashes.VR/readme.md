@@ -18,7 +18,10 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 `
     0 = [this] execVM "f\crash\fn_survivableCrashVehicle.sqf";
 `
+<<<<<<< HEAD
 5. If using ACE3, The Medical module's 'Prevent Instant Death' setting must be turned on. 
+=======
+>>>>>>> origin/master
 
 ### Change Log: 
 
