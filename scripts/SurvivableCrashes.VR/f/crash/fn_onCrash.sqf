@@ -1,25 +1,40 @@
-_targ = _this select 0;
-_targ setFuel 0;
-_targ setDamage .88;
-_targ setHitPointDamage ["HitHRotor",.88];
-_targ setHitPointDamage ["HitVRotor",.88];
-_targ setHitPointDamage ["HitEngine",.88];
-_fire = createvehicle ["test_EmptyObjectForFireBig", position _targ,[],0,"CAN_COLLIDE"];
-_fire attachTo [_targ,[0,0.0,0.0],"motor"];
-_targ allowDamage false;
-_targ spawn {
-	_targ = _this;
-	[[[_targ],"f\crash\fn_playSfx.sqf"],"BIS_fnc_execVM", true, true] call BIS_fnc_MP;
+_veh = _this select 0;
+_veh setFuel 0;
+_veh setDamage .88;
+_veh setHitPointDamage ["HitHRotor",.88];
+_veh setHitPointDamage ["HitVRotor",.88];
+_veh setHitPointDamage ["HitEngine",.88];
+_fire = createvehicle ["test_EmptyObjectForFireBig", position _veh,[],0,"CAN_COLLIDE"];
+_fire attachTo [_veh,[0,0.0,0.0],"motor"];
+_veh allowDamage false;
+_veh spawn {
+	_veh = _this;
+	_alt = (getPosATL _veh) select 2;
+	[[[_veh],"f\crash\fn_playSfx.sqf"],"BIS_fnc_execVM", true, true] call BIS_fnc_MP;
+	waitUntil{isTouchingGround _veh};
+	[_veh, _alt] spawn {
+		_veh = _this select 0;
+		_alt = _this select 1;
+		_vel = velocity _veh;
+		_dir = (_vel select 0) atan2 (_vel select 1); 
+		//if (_dir < 0) then {_dir = 360 + _dir};
+		_speed = 4 + random 2;
+		_vel = [(sin _dir) * _speed * sqrt abs(_vel select 0), 
+			(cos _dir) * _speed * sqrt abs(_vel select 1), 
+			(10 + random 6) * sqrt (((_alt+10) min 0) + .4)];
+		_veh setVelocity _vel;
+		"HelicopterExploSmall" createVehicle position _veh;
+	};
 	waitUntil {
 		sleep 1; _totalSpeed = 0;
-		_alt = (getPosATL _targ) select 2;
-		{_totalSpeed = _totalSpeed + _x} forEach velocity _targ;
+		_alt = (getPosATL _veh) select 2;
+		{_totalSpeed = _totalSpeed + _x} forEach velocity _veh;
 		_totalSpeed < 20 && _alt < 5;
 	};
 	sleep 60 + random 30;
-	_targ allowDamage true;
-	_targ setDamage 1;
+	_veh allowDamage true;
+	_veh setDamage 1;
 };
 {
 	[[[_x],"f\crash\fn_localCrashEffects.sqf"],"BIS_fnc_execVM",_x, true] call BIS_fnc_MP
-} forEach crew _targ;
+} forEach crew _veh;
