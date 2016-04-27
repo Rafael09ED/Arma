@@ -2,7 +2,7 @@
 
 **Author:** Rafael09ED
 
-**Version:** 1.1 - dev
+**Version:** 1.2
 
 Allows the crew of a vehicle to survive it's destruction and escape harmed. The script was designed for ACE 3, but is Vanilla compatible.
 
@@ -20,16 +20,21 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 `
 ### Change Log: 
 
+#### 1.2
+- Better crash impact
+- Fixed Autorotation Warning SFX
+
 #### 1.1 - dev
 - No longer dependent on ACE 3
 - New Visual Effects
 - Some tweaking of variables
 - Some refactoring
+- No longer requires ACE's Disable Instant Death
 
 #### 1.0
 - Initial Release
 
-### Video:
+### Videos:
 
-https://www.youtube.com/watch?v=V9oBHfImjYk
-
+ACE3 	: https://www.youtube.com/watch?v=PV9u3UXykHc
+Vanilla	: https://www.youtube.com/watch?v=aT3E_Mk7cts
