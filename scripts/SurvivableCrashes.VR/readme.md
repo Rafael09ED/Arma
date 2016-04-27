@@ -18,6 +18,7 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 `
     0 = [this] execVM "f\crash\fn_survivableCrashVehicle.sqf";
 `
+
 ### Change Log: 
 
 #### 1.2
