@@ -11,11 +11,11 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 1. Copy the folder "f" and the folder "sounds" to the mission directory
 2. Merge the description.ext file to the one in your mission directory
 3. Put the following line of code into your init.sqf file: 
-`sqf
+`
 	[player] execVM "f\crash\fn_handleUnitDamage.sqf";
 `
 4. Put the following code in the init of each vehicle you want it applied to:
-`sqf
+`
     0 = [this] execVM "f\crash\fn_survivableCrashVehicle.sqf";
 `
 ### Change Log: 
