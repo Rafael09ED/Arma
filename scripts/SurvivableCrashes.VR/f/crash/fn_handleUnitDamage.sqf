@@ -21,7 +21,7 @@ if (local _unit) then {
 				};
 				case "head";
 				case "body": {
-					_unit setHit [_part, _dmg]
+					_unit setHit [_part, .88];
 				};
 				default {};
 			};

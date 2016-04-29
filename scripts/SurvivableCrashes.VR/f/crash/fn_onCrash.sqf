@@ -10,7 +10,7 @@ _veh allowDamage false;
 _veh spawn {
 	_veh = _this;
 	_alt = (getPosATL _veh) select 2;
-	_aproxVel = velocity _this select 0 + velocity _this select 1 + velocity _this select 2;
+	_aproxVel = (velocity _this select 0) + (velocity _this select 1) + (velocity _this select 2);
 	[[[_veh],"f\crash\fn_playSfx.sqf"],"BIS_fnc_execVM", true, true] call BIS_fnc_MP;
 	waitUntil{isTouchingGround _veh};
 	[_veh, _alt, _aproxVel] spawn {

@@ -24,6 +24,9 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 
 ### Change Log: 
 
+#### 1.2.2 - MP Hotfix
+- Fixed bug prevent script from working in MP
+
 #### 1.2
 - Better crash impact
 - Fixed Autorotation Warning SFX
