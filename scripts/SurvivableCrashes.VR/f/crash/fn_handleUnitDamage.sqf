@@ -13,6 +13,7 @@ if (local _unit) then {
 		} else { 
 			_health = _unit getHit _part; 
 		};
+		
 		if ((vehicle _unit) getVariable ["SurvivableCrashes", false] && _health + _dmg > .88) then {
 			switch (_part) do {
 				case "": {
@@ -20,7 +21,7 @@ if (local _unit) then {
 				};
 				case "head";
 				case "body": {
-					_unit setHit [_part, .88];
+					_unit setHit [_part, _dmg]
 				};
 				default {};
 			};

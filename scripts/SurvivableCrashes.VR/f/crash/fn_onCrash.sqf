@@ -10,18 +10,19 @@ _veh allowDamage false;
 _veh spawn {
 	_veh = _this;
 	_alt = (getPosATL _veh) select 2;
+	_aproxVel = velocity _this select 0 + velocity _this select 1 + velocity _this select 2;
 	[[[_veh],"f\crash\fn_playSfx.sqf"],"BIS_fnc_execVM", true, true] call BIS_fnc_MP;
 	waitUntil{isTouchingGround _veh};
-	[_veh, _alt] spawn {
+	[_veh, _alt, _aproxVel] spawn {
 		_veh = _this select 0;
 		_alt = _this select 1;
+		_aproxVel = _this select 2;
+		
 		_vel = velocity _veh;
 		_dir = (_vel select 0) atan2 (_vel select 1); 
-		//if (_dir < 0) then {_dir = 360 + _dir};
 		_speed = 4 + random 2;
 		_vel = [(sin _dir) * _speed * sqrt abs(_vel select 0), 
 			(cos _dir) * _speed * sqrt abs(_vel select 1), 
-			(10 + random 6) * sqrt (((_alt+10) min 0) + .4)];
 		_veh setVelocity _vel;
 		"HelicopterExploSmall" createVehicle position _veh;
 	};
