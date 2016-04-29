@@ -23,6 +23,7 @@ _veh spawn {
 		_speed = 4 + random 2;
 		_vel = [(sin _dir) * _speed * sqrt abs(_vel select 0), 
 			(cos _dir) * _speed * sqrt abs(_vel select 1), 
+			(10 + random 6) * sqrt ((_alt + 10) min 0) + sqrt(abs(_aproxVel)) + .4 ]; // being tested - post 1.2.1
 		_veh setVelocity _vel;
 		"HelicopterExploSmall" createVehicle position _veh;
 	};
