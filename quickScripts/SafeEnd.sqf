@@ -1,3 +1,12 @@
+/* 
+    SafeEnd by Rafael09ED
+    Desc:
+        Moves everyone to a passed location spaced out in a square
+        Makes players invincible and restores them to full health
+    Usage:
+        [getPos player] execVM "SafeEnd.sqf";
+*/
+
 params["_location", ["_spacing", 2],["_invincibleTime", 5]];
 private["_playersList", "_squareSize","_xCount","_yCount"];
 _playersList = allPlayers - entities "HeadlessClient_F";
