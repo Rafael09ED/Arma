@@ -14,4 +14,4 @@ This is a collection of scripts written by Rafael09ED.
 * [Survivable Crashes - SP Only](https://github.com/Rafael09ED/Arma/tree/master/scripts/SurvivableCrashes.VR "SurvivableCrashes.VR") - [BI Forums](https://forums.bistudio.com/topic/190291-release-survivable-crashes-script/)
 
 
-**Downloads:** [Releases](https://github.com/Rafael09ED/Arma/releases)
+## [Downloads](https://github.com/Rafael09ED/Arma/releases)
