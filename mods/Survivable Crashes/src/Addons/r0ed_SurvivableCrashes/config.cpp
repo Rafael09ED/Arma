@@ -5,7 +5,7 @@ class CfgPatches
     class r0ed_SurvivableCrashes
     { 
         units[] = {"r0ed_ModuleSurvivableCrashes"}; 
-        requiredVersion = 0.1; 
+        requiredVersion = 1.0;
         requiredAddons[] = {"A3_Modules_F"}; 
 		projectName = "Survivable Crashes";
 		author = "Rafael09ED";
@@ -98,9 +98,15 @@ class CfgVehicles
 			class CrewDamageMultiplier
 			{
 				displayName = "Crew Damage Multiplier";
-				description = "Multiplier to the default non-fatal damage applied to the crew (ACE and Vanilla)";
+				description = "Multiplier to the default damage applied to the crew after the crash(ACE and Vanilla)";
 				defaultValue = "1";
 			};
+			class VehicleKindWhitelist
+            {
+            	displayName = "Vehicle Kind Whitelist";
+            	description = "Whitelists CfgVehicles for Survivable Crashes";
+            	defaultValue = "[""Air""]";
+            };
 			class CrewPostCrashCode
             {
                 displayName = "Crew Post-Crash Code";

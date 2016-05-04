@@ -33,7 +33,7 @@ if (_visualEffectsEnabled && _unit == player) then {
 	_unit switchMove "";
 	_unitVelocity = velocity _unit;
 	_unit setVelocity [0,0,0];
-	for "_i" from 0 to 3 do {
+	for "_i" from 0 to 5 do {
     	_ragdoll = [_unit, _unitVelocity] spawn {
 	        params ["_unit", "_vel", "_rag"];
 		    _rag = "Steel_Plate_L_F" createVehicleLocal [0, 0, 0];
@@ -62,7 +62,7 @@ if (_visualEffectsEnabled && _unit == player) then {
 	    };
 	    sleep .001;
 	};
-	waitUntil {sleep random 1; scriptDone _ragdoll};
+	waitUntil {sleep 1; scriptDone _ragdoll};
 	sleep 1;
 	waitUntil{sleep 1; isTouchingGround _unit};
 	sleep 2;

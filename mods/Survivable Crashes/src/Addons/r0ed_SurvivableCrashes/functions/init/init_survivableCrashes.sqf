@@ -1,4 +1,4 @@
-params ["_isEnabled", "_areVfxEnabled", "_areSfxEnabled", "_areExagFxEnabled", "_medicalSystemUsed", "_crewDamageMultiplier", "_crewPostCrashCode", "_vehicleRestCode"];
+params ["_isEnabled", "_areVfxEnabled", "_areSfxEnabled", "_areExagFxEnabled", "_medicalSystemUsed", "_crewDamageMultiplier", "_vehicleKindWhitelist", "_crewPostCrashCode", "_vehicleRestCode"];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_ModEnabled", _isEnabled];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_VisualEffectsEnabled", _areVfxEnabled];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_SoundEffectsEnabled", _areSfxEnabled];
@@ -15,6 +15,7 @@ if(typeName _crewDamageMultiplier != "SCALAR") then {
     _crewDamageMultiplier = parseNumber _crewDamageMultiplier;
 };
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_CrewDamageMultiplier", _crewDamageMultiplier];
+missionNamespace setVariable ["r0ed_SurvivableCrashesVar_VehicleKindWhitelist", _vehicleKindWhitelist];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_VehicleRestCode", _vehicleRestCode];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_CrewPostCrashCode", _crewPostCrashCode];
 {

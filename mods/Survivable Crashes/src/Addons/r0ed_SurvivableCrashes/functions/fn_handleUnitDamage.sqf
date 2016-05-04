@@ -18,8 +18,23 @@ if (local _unit) then {
 			switch (_part) do {
 				case "": {
 					_unit setDamage .88;
+					switch (missionNamespace getVariable "r0ed_SurvivableCrashesVar_MedicalSystem") do {
+					    case "ACE": {
+                            [_unit, true] call ace_medical_fnc_setUnconscious;
+					    };
+					    default {};
+		            };
 				};
-				case "head";
+				case "head": {
+					_unit setHit [_part, .88];
+
+				    switch (missionNamespace getVariable "r0ed_SurvivableCrashesVar_MedicalSystem") do {
+                        case "ACE": {
+                            [_unit, true] call ace_medical_fnc_setUnconscious;
+                        };
+                        default {};
+                    };
+				};
 				case "body": {
 					_unit setHit [_part, .88];
 				};

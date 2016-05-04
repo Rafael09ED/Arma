@@ -1,6 +1,17 @@
 params ["_veh"];
 if (!(missionNamespace getVariable ["r0ed_SurvivableCrashesVar_ModEnabled", true])) exitWith {};
+_vehKindWhitelist = missionNamespace getVariable ["r0ed_SurvivableCrashesVar_VehicleKindWhitelist", true];
 if (_veh getVariable ["r0ed_SurvivableCrashes", false]) exitWith {};
+
+private ["_isAllowed"];
+_isAllowed = false;
+{
+    _vehType = _x;
+    if (_veh isKindOf _vehType) then {
+        _isAllowed = true;
+    };
+} forEach _vehKindWhitelist;
+if (!(_isAllowed)) exitWith {};
 
 _veh setVariable ["r0ed_SurvivableCrashes", true];
 _veh setVariable ["r0ed_SurvivableCrashes_NotShotDown", true];

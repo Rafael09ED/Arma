@@ -2,12 +2,17 @@
 
 **Author:** Rafael09ED
 
-**Version:** 1.0
+**Version:** 1.1
 
 Allows the crew of a vehicle to survive it's destruction and escape harmed. 
 
-Works with Vanilla and ACE3. Activated and customizable with a module in the editor.
+Works with ACE3 and Vanilla. Activated and customizable with a module in the editor.
 ACE must have Prevent Instant Death enabled.
+
+### Usage:
+
+- Create Survivable Crashes module in the editor
+- Launch mission
 
 ### Dependencies:
 
@@ -15,13 +20,13 @@ ACE must have Prevent Instant Death enabled.
 
 ### Change Log: 
 
+#### 1.1
+
+- Added Vehicle Whitelist
+
 #### 1.0
 
 - Initial Release as Mod
-
-### Video:
-
-https://youtu.be/0KtNXxEG-Js?t=2m
 
 ### Webpage: 
 

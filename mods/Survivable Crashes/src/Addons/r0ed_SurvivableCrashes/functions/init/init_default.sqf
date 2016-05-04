@@ -6,6 +6,7 @@ if(missionNamespace getVariable ["r0ed_SurvivableCrashes_Initialized", false]) e
 	true,
 	"AUTO",
 	1,
+	["Air"],
 	{},
 	{
 		params["_veh"];
