@@ -6,7 +6,12 @@
 
 Allows the crew of a vehicle to survive it's destruction and escape harmed. 
 
-Works with ACE and Vanilla. Activated and customizable with a module in the editor.
+Works with Vanilla and ACE3. Activated and customizable with a module in the editor.
+ACE must have Prevent Instant Death enabled.
+
+### Dependencies:
+
+- CBA
 
 ### Change Log: 
 
@@ -14,10 +19,10 @@ Works with ACE and Vanilla. Activated and customizable with a module in the edit
 
 - Initial Release as Mod
 
-### Dependencies:
-
-- CBA
-
 ### Video:
 
 https://youtu.be/0KtNXxEG-Js?t=2m
+
+### Webpage: 
+
+https://github.com/Rafael09ED/Arma
