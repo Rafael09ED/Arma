@@ -11,7 +11,7 @@ switch (_medicalSystem) do {
 		_unit allowDamage false;		
 	};
     case "VANILLA": { _unit allowDamage false;};
-	case "DAMAGEFALSE": { _unit allowDamage false;};
+	case "LIMIT_DAMAGE": { _unit allowDamage false;};
     default {};
 };
 if (_visualEffectsEnabled && _unit == player) then {
@@ -21,11 +21,6 @@ if (_visualEffectsEnabled && _unit == player) then {
 [_unit, _medicalSystem, _damageMultiplier, _crewPostCrashCode] spawn {
     params ["_unit", "_medicalSystem", "_damageMultiplier", "_crewPostCrashCode"];
     private ["_ragdoll"];
-    waitUntil {
-		_alt = getPosATL _unit select 2;
-		_speed = vectorMagnitude velocity _unit;
-		_alt < 2 or _speed < .5
-	};
 	_unit action ["eject", vehicle _unit];
 	if (vehicle _unit != _unit) then {
 		moveOut _unit;
@@ -33,6 +28,7 @@ if (_visualEffectsEnabled && _unit == player) then {
 	_unit switchMove "";
 	_unitVelocity = velocity _unit;
 	_unit setVelocity [0,0,0];
+
 	for "_i" from 0 to 5 do {
     	_ragdoll = [_unit, _unitVelocity] spawn {
 	        params ["_unit", "_vel", "_rag"];
@@ -82,14 +78,11 @@ if (_visualEffectsEnabled && _unit == player) then {
 			_unit allowDamage true;
 		};
 		case "VANILLA": {
-			_unit allowDamage true;
 			_unit setDamage (.8 * _damageMultiplier);
-			sleep .001;
-            _unit allowDamage false;
             sleep 5;
             _unit allowDamage true;
 		};
-		case "DAMAGEFALSE": { _unit allowDamage true;};
+		case "LIMIT_DAMAGE": { _unit allowDamage true;};
         default {};
     };
     [_unit] spawn _crewPostCrashCode;

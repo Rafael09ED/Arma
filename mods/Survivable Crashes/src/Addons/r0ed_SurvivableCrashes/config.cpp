@@ -91,7 +91,7 @@ class CfgVehicles
 					class forceACE {name = "Force ACE3"; value = "ACE";};
 					class forceVanilla {name = "Force Vanilla"; value = "VANILLA";};
 					class autoDetect {name = "Auto Detect (ACE3 or Vanilla)"; value = "AUTO"; default = 3;};
-					class applyNoDamage {name = "Allow Damage False Only"; value = "DAMAGEFALSE";};
+					class applyNoDamage {name = "Limit Damage Only"; value = "LIMIT_DAMAGE";};
 					class doNothing {name = "Do Not Prevent Damage (Do Nothing)"; value = "NONE";};
 				};
 			};
@@ -107,10 +107,16 @@ class CfgVehicles
             	description = "Whitelists CfgVehicles for Survivable Crashes";
             	defaultValue = "[""Air""]";
             };
+            class OnCrashCode
+            {
+                displayName = "On Crash Code";
+            	description = "Code called vehicle local: _this = [vehicle, EventHandlerEvent_HandleDamage]";
+            	defaultValue = "params[""_vehicle"", ""_event""];";
+            };
 			class CrewPostCrashCode
             {
                 displayName = "Crew Post-Crash Code";
-            	description = "Code called locally by each crew member after they are ejected: _this = [_unit]";
+            	description = "Code called locally by each crew member after they are ejected: _this = [unit]";
             	defaultValue = "params[""_unit""];";
             };
 			class VehicleRestCode

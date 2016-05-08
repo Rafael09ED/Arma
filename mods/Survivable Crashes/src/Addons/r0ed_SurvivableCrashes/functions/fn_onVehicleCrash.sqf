@@ -1,8 +1,9 @@
-params ["_veh"];
+params ["_veh","_HandleDamageEvent"];
 private ["_vehRestCode", "_sfxEnabled", "_exagEffectsEnabled"];
 _vehRestCode = missionNamespace getVariable "r0ed_SurvivableCrashesVar_VehicleRestCode";
 _sfxEnabled = missionNamespace getVariable "r0ed_SurvivableCrashesVar_SoundEffectsEnabled";
 _exagEffectsEnabled = missionNamespace getVariable "r0ed_SurvivableCrashesVar_ExaggeratedEffectsEnabled";
+_onCrashCode = missionNamespace getVariable "r0ed_SurvivableCrashesVar_OnCrashCode";
 
 _veh setFuel 0;
 _veh setDamage .88;
@@ -70,3 +71,5 @@ _veh allowDamage false;
 {
 	[_x] remoteExecCall ["r0ed_fnc_vehicleCrashLocal", _x];
 } forEach crew _veh;
+
+[_veh, _HandleDamageEvent] spawn _onCrashCode;

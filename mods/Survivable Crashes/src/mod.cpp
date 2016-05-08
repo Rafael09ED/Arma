@@ -1,4 +1,4 @@
-name = "Survivable Crashes v1.1";
+name = "Survivable Crashes v1.2";
 description = "Survivable Crashes";
 picture = "logo.paa";
 actionName = "Website";

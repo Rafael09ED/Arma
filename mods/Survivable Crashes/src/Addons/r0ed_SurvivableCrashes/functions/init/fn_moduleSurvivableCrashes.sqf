@@ -8,6 +8,7 @@ _logic = param [0,objNull,[objNull]];
 	_logic getVariable "MedicalSystem",
 	_logic getVariable "CrewDamageMultiplier",
 	call compile (_logic getVariable "VehicleKindWhitelist"),
+	compile (_logic getVariable "OnCrashCode"),
 	compile (_logic getVariable "CrewPostCrashCode"),
 	compile (_logic getVariable "VehicleRestCode")
 ] call compile preprocessFileLineNumbers "\r0ed_SurvivableCrashes\functions\init\init_survivableCrashes.sqf";

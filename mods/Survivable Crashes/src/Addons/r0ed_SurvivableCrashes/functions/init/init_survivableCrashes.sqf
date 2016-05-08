@@ -1,5 +1,18 @@
-params ["_isEnabled", "_areVfxEnabled", "_areSfxEnabled", "_areExagFxEnabled", "_medicalSystemUsed", "_crewDamageMultiplier", "_vehicleKindWhitelist", "_crewPostCrashCode", "_vehicleRestCode"];
+params ["_isEnabled",
+    "_areVfxEnabled",
+    "_areSfxEnabled",
+    "_areExagFxEnabled",
+    "_medicalSystemUsed",
+    "_crewDamageMultiplier",
+    "_vehicleKindWhitelist",
+    "_onCrashCode",
+    "_crewPostCrashCode",
+    "_vehicleRestCode"
+];
+
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_ModEnabled", _isEnabled];
+if(not _isEnabled) exitWith {};
+
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_VisualEffectsEnabled", _areVfxEnabled];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_SoundEffectsEnabled", _areSfxEnabled];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_ExaggeratedEffectsEnabled", _areExagFxEnabled];
@@ -16,8 +29,13 @@ if(typeName _crewDamageMultiplier != "SCALAR") then {
 };
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_CrewDamageMultiplier", _crewDamageMultiplier];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_VehicleKindWhitelist", _vehicleKindWhitelist];
-missionNamespace setVariable ["r0ed_SurvivableCrashesVar_VehicleRestCode", _vehicleRestCode];
+missionNamespace setVariable ["r0ed_SurvivableCrashesVar_OnCrashCode", _onCrashCode];
 missionNamespace setVariable ["r0ed_SurvivableCrashesVar_CrewPostCrashCode", _crewPostCrashCode];
+missionNamespace setVariable ["r0ed_SurvivableCrashesVar_VehicleRestCode", _vehicleRestCode];
+
+if(hasInterface) then {
+	[player] execVM "\r0ed_SurvivableCrashes\functions\fn_handleUnitDamage.sqf";
+};
 {
     _unit = _x;
     _veh = vehicle _x;

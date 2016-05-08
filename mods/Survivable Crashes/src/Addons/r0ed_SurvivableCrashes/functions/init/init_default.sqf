@@ -1,14 +1,15 @@
 if(missionNamespace getVariable ["r0ed_SurvivableCrashes_Initialized", false]) exitWith {};
 
-[	false,
-	true,
-	true,
-	true,
-	"AUTO",
-	1,
-	["Air"],
-	{},
-	{
+[	false,  // Mod Enabled
+	true,   //VFX
+	true,   //SFX
+	true,   // Exag FX
+	"AUTO", // Med Sys
+	1,      // dmg Multi
+	["Air"],// Veh whitelist
+	{},     // On Crash Code
+	{},     // crew Post Crash code
+	{       // veh post crash code
 		params["_veh"];
 		sleep (40 + random 40);
 		_veh allowDamage true;
