@@ -2,7 +2,7 @@
 
 **Author:** Rafael09ED
 
-**Version:** 1.1
+**Version:** 1.2
 
 Allows the crew of a vehicle to survive it's destruction and escape harmed. 
 
@@ -19,6 +19,12 @@ ACE must have Prevent Instant Death enabled.
 - CBA
 
 ### Change Log: 
+
+#### 1.2
+
+- Optimized mod for when disabled
+- Fixed damage prevention when medical system on "None"
+- Added code parameter in module activated on crash
 
 #### 1.1
 
