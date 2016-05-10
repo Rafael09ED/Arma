@@ -1,5 +1,5 @@
 params ["_veh"];
-if (!(missionNamespace getVariable ["r0ed_SurvivableCrashesVar_ModEnabled", true])) exitWith {};
+if (!(missionNamespace getVariable ["r0ed_SurvivableCrashesVar_ModEnabled", false])) exitWith {};
 _vehKindWhitelist = missionNamespace getVariable ["r0ed_SurvivableCrashesVar_VehicleKindWhitelist", true];
 if (_veh getVariable ["r0ed_SurvivableCrashes", false]) exitWith {};
 
