@@ -12,6 +12,8 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 2. Merge the init.sqf and description.ext files to the ones in your mission directory 
 3. If using ACE3, The Medical module's 'Prevent Instant Death' setting must be turned on. 
 
+Setting can be changed by editing the values in `r0ed_SurvivableCrashes/functions/init/init_default.sqf`. They are the same as the variables in the module of the mod version.
+
 ### Change Log: 
 
 #### 1.2.1
