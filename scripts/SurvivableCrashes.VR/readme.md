@@ -1,4 +1,4 @@
-# Arma 3 Survivable Crashes  
+# Arma 3 Survivable Crashes Script
 
 **Author:** Rafael09ED
 
