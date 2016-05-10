@@ -2,7 +2,7 @@
 
 **Author:** Rafael09ED
 
-**Version:** 1.2
+**Version:** 1.2.1
 
 Allows the crew of a vehicle to survive it's destruction and escape harmed. 
 
@@ -19,6 +19,10 @@ ACE must have Prevent Instant Death enabled.
 - CBA
 
 ### Change Log: 
+
+#### 1.2.1
+
+- Fixed Early Ejection
 
 #### 1.2
 
