@@ -6,7 +6,7 @@ This is a collection of scripts written by Rafael09ED.
 
 ### Mods:
 
-* [Survivable Crashes](https://github.com/Rafael09ED/Arma/tree/master/mods/Survivable%20Crashes "@SurvivableCrashes") - [Video] (https://youtu.be/0KtNXxEG-Js?t=2m) - [BI Forums](https://forums.bistudio.com/topic/190516-survivable-crashes-shoot-downs-mod/)
+* [Survivable Crashes](https://github.com/Rafael09ED/Arma/tree/master/mods/Survivable%20Crashes "@SurvivableCrashes") - [BI Forums](https://forums.bistudio.com/topic/190516-survivable-crashes-shoot-downs-mod/) - [Video] (https://youtu.be/0KtNXxEG-Js?t=2m) 
 
 ### Scripts:
 
