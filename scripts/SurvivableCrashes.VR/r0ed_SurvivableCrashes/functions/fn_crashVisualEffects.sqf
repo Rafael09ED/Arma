@@ -53,11 +53,11 @@
 		"crash" cutText ["","BLACK OUT", 1.2 + random .5];
 		sleep 4 + random 2;
 	};
-	for "_i" from 1 to 4 do {
+	for "_i" from 1 to 5 do {
 		"crash" cutText ["","BLACK IN",1 + random 2];
 		sleep 2 + random 1;
 		"crash" cutText ["","BLACK OUT",1 + random 2];
 		sleep 2 + random 1;
 	};
-	"crash" cutText ["","BLACK IN", .5];
+	"crash" cutText ["","BLACK IN", .25];
 };

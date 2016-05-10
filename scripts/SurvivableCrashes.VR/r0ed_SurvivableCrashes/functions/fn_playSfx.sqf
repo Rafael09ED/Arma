@@ -1,6 +1,10 @@
+params ["_veh"];
+private ["_soundLoop"];
+
 if (!hasInterface) exitWith{};
-_targ = _this select 0;
-_soundLoop = _targ spawn { 
+if (vehicle player != _veh && player distance _veh >  1000) exitWith{};
+
+_soundLoop = _veh spawn { 
 	for "_i" from 1 to 60 do { 
 	_dist = _this distance player;
 		if (_dist < 1) then {
@@ -12,9 +16,7 @@ _soundLoop = _targ spawn {
 	};
 };
 waitUntil {
-	sleep 1; _totalSpeed = 0;
-	_alt = (getPosATL _targ) select 2;
-	{_totalSpeed = _totalSpeed + _x} forEach velocity _targ;
-	(_totalSpeed < 15 && _alt < 2) or !alive _targ;
+	sleep 1; 
+	isTouchingGround _veh or !alive _veh
 };
 terminate _soundLoop;

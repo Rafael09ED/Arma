@@ -4,8 +4,23 @@ class CfgSounds {
 	class AutorotationWarn
 	{
 		name = "AutorotationWarn";
-		sound[]={"sound\crash\ACE_AutorotationWarning.ogg",4,1};
+		sound[]={"r0ed_SurvivableCrashes\sounds\ACE_AutorotationWarning.ogg",4,1};
 		titles[]={};
 	};
 	
 };
+
+class CfgFunctions 
+{
+	class r0ed
+	{
+		tag = "r0ed";
+		class SurvivableCrashes
+		{
+			file = "r0ed_SurvivableCrashes\functions";
+			class vehicleCrashLocal{};
+			class crashVisualEffects{};
+			class vehicleInit{};
+		};
+	};
+};	
