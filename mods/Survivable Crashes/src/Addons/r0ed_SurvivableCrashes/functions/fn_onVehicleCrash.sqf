@@ -47,8 +47,7 @@ _veh allowDamage false;
 		};
 	};
 	waitUntil {
-		sleep 1; _totalSpeed = 0;
-		{_totalSpeed = _totalSpeed + _x;} forEach velocity _veh;
+		sleep 1; _totalSpeed = vectorMagnitude velocity _veh;
 		_totalSpeed < 1;
 	};
 	[_veh, _velocityVehPrev] call _vehRestCode;

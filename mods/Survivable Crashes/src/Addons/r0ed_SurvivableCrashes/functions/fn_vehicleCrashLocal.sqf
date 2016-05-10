@@ -20,7 +20,11 @@ if (_visualEffectsEnabled && _unit == player) then {
 
 [_unit, _medicalSystem, _damageMultiplier, _crewPostCrashCode] spawn {
     params ["_unit", "_medicalSystem", "_damageMultiplier", "_crewPostCrashCode"];
-    private ["_ragdoll"];
+	waitUntil {
+		_alt = getPosATL _unit select 2;
+		_speed = vectorMagnitude velocity _unit;
+		_alt < 2 or _speed < .5
+	};
 	_unit action ["eject", vehicle _unit];
 	if (vehicle _unit != _unit) then {
 		moveOut _unit;
@@ -29,6 +33,7 @@ if (_visualEffectsEnabled && _unit == player) then {
 	_unitVelocity = velocity _unit;
 	_unit setVelocity [0,0,0];
 
+    private ["_ragdoll"];
 	for "_i" from 0 to 5 do {
     	_ragdoll = [_unit, _unitVelocity] spawn {
 	        params ["_unit", "_vel", "_rag"];
