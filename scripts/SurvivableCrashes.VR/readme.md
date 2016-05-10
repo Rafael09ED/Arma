@@ -8,10 +8,9 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 
 ### Installation:
 
-1. Copy the folder "f" and the folder "sounds" to the mission directory
-2. Merge the description.ext file to the one in your mission directory 
+1. Copy the folder "r0ed_SurvivableCrashes" to the mission directory
+2. Merge the init.sqf and description.ext files to the ones in your mission directory 
 3. If using ACE3, The Medical module's 'Prevent Instant Death' setting must be turned on. 
-
 
 ### Change Log: 
 
