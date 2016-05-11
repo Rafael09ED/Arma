@@ -1,0 +1,10 @@
+# Idea
+
+idea/
+.idea/
+*.iml
+*.iws
+
+# Arma 
+
+*.biprivatekey
