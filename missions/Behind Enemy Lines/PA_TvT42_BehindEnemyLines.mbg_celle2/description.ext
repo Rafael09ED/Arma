@@ -1,0 +1,199 @@
+//Behind Enemy Lines
+//By Rafael09ED
+//Some code canabalized from F3 Framework
+
+class Header
+{
+	gameType = TDM;
+	minPlayers = 1;
+	maxPlayers = 64;
+};
+
+onLoadName = "TVT: Behind Enemy Lines";
+onLoadMission = "USAF Pilots crash in hostile territory...";
+author = "Rafael09ED";
+loadScreen = "splash.jpg";
+enableDebugConsole = 1;
+
+respawn = 3;
+respawnDelay = 86400;
+respawnTemplates[] = {"Base"};
+
+disabledAI = true;
+
+class Params
+{
+	class f_param_weather
+	{
+		title = "Weather";
+		values[] = {0,1,2,3,4,5,6,7,8};
+		texts[] = {"Clear (Calm)","Clear (Light Winds)","Clear (Strong Winds)","Overcast (Calm)","Overcast (Light Winds)","Overcast (Strong Winds)","Rain (Light Winds)","Rain (Strong Winds)","Storm"};
+		default = 3;
+		function = "f_fnc_setWeather";
+		isGlobal = 0;
+		code = "f_param_weather = %1";
+	};
+
+	class f_param_fog
+	{
+		title = "Fog";
+		values[] = {0,1,2};
+		texts[] = {"None","Light","Heavy"};
+		default = 0;
+		function = "f_fnc_SetFog";
+		isGlobal = 0;
+		code = "f_param_fog = %1";
+	};
+
+    class f_param_timeOfDay
+	{
+		title = "Time of Day";
+		values[] = {0,1,2,3,4,5,6,7};
+		texts[] = {"Dawn","Early Morning","Morning","Noon","Afternoon","Evening","Dusk","Night"};
+		default = 3;
+		function = "f_fnc_setTime";			
+ 		isGlobal = 0;
+ 		code = "f_param_timeOfDay = %1";
+	};
+    class f_param_mission_timer
+	
+    {
+            title = "Safe Start Timer";
+            values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
+            texts[] = {"0","1","2","3","4","5","6","7","8","9","10","15"};
+            default = 5;
+            code = "f_param_mission_timer = %1";
+    };
+};
+
+class CfgFunctions
+{
+	#include "r0ed_SurvivableCrashes\CfgFunctions.hpp"
+	class F
+	{
+		class safeStart
+		{
+			file = "f\safeStart";
+			class safety{};
+		};
+		class missionConditions
+		{
+			file = "f\params";
+			class SetTime{};
+			class SetFog{};
+			class SetWeather{};
+		};
+		class loadLoadouts
+		{
+			file = "f\assignGear";
+			class setGear{};
+		};	
+		class triggerListChanged
+		{
+			file = "f\util";
+			class triggerListChanged{};
+		};	
+	};
+};
+
+class cfgNotifications
+{
+	class Template
+	{
+		title = ""; 
+		iconPicture = ""; 
+		iconText = ""; 
+		description = ""; 
+		color[] = {1,1,1,1}; 
+		duration = 5;
+		priority = 0;
+		difficulty[] = {};
+	};
+	class SafeStart
+	{
+		title = "SAFE START";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 10;
+		priority = 0;
+	};
+	class SafeStartMissionStarting
+	{
+		title = "SAFE START";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 3;
+		priority = 1;
+	};
+	class PilotKilled
+	{
+		title = "Pilot KIA";
+		iconPicture = "\a3\ui_f\data\map\MapControl\taskiconfailed_ca.paa"
+		description = "Pilot %1 was KIA";
+		duration = 10;
+		color[] = {.66,.05,.03,1}; 
+		priority = 10;
+	};
+	class PilotCaptured
+	{
+		title = "Pilot Captured";
+		iconPicture = "\a3\ui_f\data\map\MapControl\taskicondone_ca.paa"
+		description = "Pilot %1 was captured by %2";
+		duration = 7;
+		color[] = {.66,.33,.01,1}; 
+		priority = 5;
+	};
+	class CivilianKilledByBlufor
+	{
+		title = "War Crime Committed!";
+		iconPicture = "\a3\ui_f\data\map\VehicleIcons\pictureheal_ca.paa"
+		description = "Blufor killed a civilian!";
+		duration = 2;
+		color[] = {.1,.1,.8,1}; 
+		priority = 3;
+	};
+};
+
+class CfgDebriefing
+{
+	class End1
+	{
+		title = "Blufor Defeat!";
+		subtitle = "All the pilots have died";
+		description = "Maybe the pilots should have been nicer to opfor";
+	};
+	class End2
+	{
+		title = "Blufor Victory!";
+		subtitle = "Blufor has recovered the pilots";
+		description = "Please post to the AAR thread!";
+	};
+	class End3
+	{
+		title = "Opfor Victory!";
+		subtitle = "Opfor has captured the pilots";
+		description = "Please post to the AAR thread!";
+	};
+	class End4
+	{
+		title = "Blufor Victory!";
+		subtitle = "All of Opfor has died";
+		description = "Please post to the AAR thread!";
+	};
+	class End5
+	{
+		title = "Opfor Victory!";
+		subtitle = "All of Blufor has died";
+		description = "Please post to the AAR thread!";
+	};
+	class End6
+	{
+		title = "Draw!";
+		subtitle = "Neither side could gain the advantage";
+		description = "Please post to the AAR thread!";
+	};
+};
+
+class CfgSounds {
+	#include "r0ed_SurvivableCrashes\CfgSounds.hpp"
+};
