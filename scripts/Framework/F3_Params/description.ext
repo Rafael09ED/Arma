@@ -1,0 +1,49 @@
+class Params
+{
+	class f_param_weather
+	{
+		title = "Weather";
+		values[] = {0,1,2,3,4,5,6,7,8};
+		texts[] = {"Clear (Calm)","Clear (Light Winds)","Clear (Strong Winds)","Overcast (Calm)","Overcast (Light Winds)","Overcast (Strong Winds)","Rain (Light Winds)","Rain (Strong Winds)","Storm"};
+		default = 3;
+		function = "f_fnc_setWeather";
+		isGlobal = 0;
+		code = "f_param_weather = %1";
+	};
+
+	class f_param_fog
+	{
+		title = "Fog";
+		values[] = {0,1,2};
+		texts[] = {"None","Light","Heavy"};
+		default = 0;
+		function = "f_fnc_SetFog";
+		isGlobal = 0;
+		code = "f_param_fog = %1";
+	};
+
+    class f_param_timeOfDay
+	{
+		title = "Time of Day";
+		values[] = {0,1,2,3,4,5,6,7};
+		texts[] = {"Dawn","Early Morning","Morning","Noon","Afternoon","Evening","Dusk","Night"};
+		default = 3;
+		function = "f_fnc_setTime";			
+ 		isGlobal = 0;
+ 		code = "f_param_timeOfDay = %1";
+	};
+};
+
+class CfgFunctions
+{
+	class F
+	{
+		class missionConditions
+		{
+			file = "f\params";
+			class SetTime{};
+			class SetFog{};
+			class SetWeather{};
+		};
+	};
+};

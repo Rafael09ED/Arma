@@ -1,0 +1,55 @@
+class Params
+{
+    class f_param_mission_timer
+    {
+            title = "Safe Start Timer";
+            values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
+            texts[] = {"0","1","2","3","4","5","6","7","8","9","10","15"};
+            default = 5;
+            code = "f_param_mission_timer = %1";
+    };
+
+};
+
+class CfgFunctions
+{
+	class F
+	{
+		class safeStart
+		{
+			file = "f\safeStart";
+			class safety{};
+		};
+	};
+};
+
+class cfgNotifications
+{
+	class Template
+	{
+		title = ""; 
+		iconPicture = ""; 
+		iconText = ""; 
+		description = ""; 
+		color[] = {1,1,1,1}; 
+		duration = 5;
+		priority = 0;
+		difficulty[] = {};
+	};
+	class SafeStart
+	{
+		title = "SAFE START";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 10;
+		priority = 0;
+	};
+	class SafeStartMissionStarting
+	{
+		title = "SAFE START";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 3;
+		priority = 1;
+	};
+};
