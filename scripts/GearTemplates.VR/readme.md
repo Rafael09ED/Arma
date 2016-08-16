@@ -2,7 +2,7 @@
 
 **Author:** 	Rafael09ED
 
-**Version:**	1.0
+**Version:**	1.1
 
 Allows the creation of template soldiers who have their loadout applied to all other units of the same type.
 
@@ -21,6 +21,10 @@ Allows the creation of template soldiers who have their loadout applied to all o
 
 Units of the same type as the template units will be created with the same loadout as the templates
 
-### Dependencies: 
+### Change Log:
 
-- ACE3
+#### 1.1
+- Vehicle Cargo Support
+- F3 Gear Script Replacement Interface
+    
+1.0 - Initial Release
