@@ -27,4 +27,5 @@ Units of the same type as the template units will be created with the same loado
 - Vehicle Cargo Support
 - F3 Gear Script Replacement Interface
     
-1.0 - Initial Release
+#### 1.0 
+- Initial Release
