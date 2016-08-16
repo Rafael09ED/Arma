@@ -28,4 +28,4 @@ missionNameSpace setVariable ["loadoutInitializationDone", true, true];
 	_array = [_x];
 	[_array, "f_fnc_setGear", _x, true] call BIS_fnc_MP;
 	// This should be equivalent: [_x] remoteExec ["f_fnc_setGear", _x];
-} forEach allUnits;
+} forEach allUnits + vehicles;
