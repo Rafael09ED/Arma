@@ -2,7 +2,7 @@
 
 **Author:** Rafael09ED
 
-**Version:** 1.2.1
+**Version:** 1.3
 
 Allows the crew of a vehicle to survive it's destruction and escape harmed. The script was designed for ACE 3, but is Vanilla compatible.
 
@@ -15,6 +15,11 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 Setting can be changed by editing the values in `r0ed_SurvivableCrashes/functions/init/init_default.sqf`. They are the same as the variables in the module of the mod version.
 
 ### Change Log: 
+
+#### 1.3
+
+- Fixes improper damage being delt making the script unusable. Now working with ACE and Vanilla. Thank you to **Stijn Winand (Whipgit)** for suggesting the fix which let me find the problem.
+- Fixed audio range/volume being heard across the map
 
 #### 1.2.1
 

@@ -20,6 +20,7 @@ if (_visualEffectsEnabled && _unit == player) then {
 
 [_unit, _medicalSystem, _damageMultiplier, _crewPostCrashCode] spawn {
     params ["_unit", "_medicalSystem", "_damageMultiplier", "_crewPostCrashCode"];
+	sleep 1;
 	waitUntil {
 		_alt = getPosATL _unit select 2;
 		_speed = vectorMagnitude velocity _unit;

@@ -2,7 +2,7 @@ params ["_veh"];
 private ["_soundLoop"];
 
 if (!hasInterface) exitWith{};
-if (vehicle player != _veh && player distance _veh >  1000) exitWith{};
+if (vehicle player != _veh && player distance _veh >  100) exitWith{};
 
 _soundLoop = _veh spawn { 
 	for "_i" from 1 to 60 do { 
