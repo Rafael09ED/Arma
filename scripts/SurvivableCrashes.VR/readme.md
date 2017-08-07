@@ -9,7 +9,7 @@ Allows the crew of a vehicle to survive it's destruction and escape harmed. The 
 ### Installation:
 
 1. Copy the folder "r0ed_SurvivableCrashes" to the mission directory
-2. Merge the init.sqf and description.ext files to the ones in your mission directory 
+2. Merge the initPlayerLocal.sqf, initServer.sqf and description.ext files to the ones in your mission directory 
 3. If using ACE3, The Medical module's 'Prevent Instant Death' setting must be turned on. 
 
 Setting can be changed by editing the values in `r0ed_SurvivableCrashes/functions/init/init_default.sqf`. They are the same as the variables in the module of the mod version.
